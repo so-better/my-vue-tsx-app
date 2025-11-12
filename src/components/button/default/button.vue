@@ -8,8 +8,8 @@
 /**
  * 使用vue模板语法的组件封装较为简单，同时TS的支持性很好
  */
-// import type { PropType } from 'vue'
-import type { Props } from '../props'
+// import { type PropType } from 'vue'
+import { type Props } from '../props'
 
 /**
  * defineProps用于定义props，这里是vue的类型声明写法

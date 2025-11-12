@@ -57,5 +57,6 @@ import DefaultButton from '../../components/button/default/button.vue'
 import HButton from '../../components/button/h/button'
 import TsxButton from '../../components/button/tsx/button'
 
+// 通过inject获取App.vue透传的dark值
 const dark = inject<Ref<boolean>>('dark')!
 </script>

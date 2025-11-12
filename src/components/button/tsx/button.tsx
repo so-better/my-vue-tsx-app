@@ -1,7 +1,7 @@
 import { defineComponent, type PropType } from 'vue'
+import { type Props } from '../props'
 // 引入样式，这里就不支持局部样式了，或者可以考虑像React一样使用 CSS Module
 import '../style.less'
-import type { Props } from '../props'
 
 /**
  * 使用defineComponent和TSX来封装按钮组件，这是纯tsx的，但是在props定义时，只能使用运行时的props配置

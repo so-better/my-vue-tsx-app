@@ -5,7 +5,7 @@
 import { inject, type Ref } from 'vue'
 import DefaultButton from '../../components/button/default/button.vue'
 
-// 从inject获取App.vue透传的dark值
+// 通过inject获取App.vue透传的dark值
 const dark = inject<Ref<boolean>>('dark')!
 
 // 开启或者关闭深色主题的方法

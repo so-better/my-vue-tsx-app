@@ -8,7 +8,8 @@ import '../style.less'
  * Vue3官方文档（https://cn.vuejs.org/api/general.html#definecomponent）中，提到：在将来计划提供一个 Babel 插件，自动推断并注入运行时 props (就像在单文件组件中的 defineProps 一样)，以便省略运行时 props 的声明
  */
 export default defineComponent(
-  // 第一个参数是props，第二个参数是ctx上下文，其中可以拿到slots、emits和attrs等，这里只需要用到slots
+  // 第一个参数是props，这里加上类型声明是为了在使用这个组件时，组件属性的类型可以正确推导
+  // 第二个参数是ctx上下文，其中可以拿到slots、emits和attrs等，这里只需要用到slots
   (props: Props, { slots }) => {
     return () => {
       // 通过h函数创建一个VNode 并返回
