@@ -1,0 +1,39 @@
+:root {
+  --bg-color: #fff;
+  --border-color: #ddd;
+  --font-color: #505050;
+  --btn-hover-bg-color: #eff0f2;
+  --btn-active-bg-color: #e2e4e6;
+}
+
+:root[dark] {
+  --bg-color: #222;
+  --border-color: #5b5b5b;
+  --font-color: #f0f0f0;
+  --btn-hover-bg-color: #2e2e2e;
+  --btn-active-bg-color: #333;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
