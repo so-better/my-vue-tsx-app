@@ -1,114 +1,242 @@
 // 按钮组件的样式，抽成独立的less文件是为了方便复用
+@theme-primary: #108af3;
+@theme-success: #1ec35b;
+@theme-info: #22b2ab;
+@theme-warning: #f68822;
+@theme-danger: #db3f2a;
 
 .btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 10px;
   font-size: 14px;
+  line-height: 1;
+  height: 32px;
+  padding: 0 12px;
   border-radius: 4px;
-  border: 1px solid;
-  transition: all 300ms;
+  border: 1px solid transparent;
+  transition: all 300ms ease;
+  cursor: pointer;
+  user-select: none;
 
-  & + .btn {
-    margin-left: 10px;
+  &.btn-small {
+    font-size: 12px;
+    height: 28px;
+    padding: 0 8px;
   }
 
-  &:hover {
-    cursor: pointer;
+  &.btn-large {
+    font-size: 16px;
+    height: 36px;
+    padding: 0 16px;
   }
 
   &.btn-default {
-    border-color: var(--border-color);
-    background: var(--bg-color);
-    color: var(--font-color);
+    background: #fff;
+    border-color: #dcdfe6;
+    color: #333;
 
-    &:hover {
-      background: var(--btn-hover-bg-color);
+    &.btn-active-primary {
+      &:hover {
+        color: @theme-primary;
+        border-color: fade(@theme-primary, 20%);
+        background: fade(@theme-primary, 10%);
+        box-shadow: 0 2px 6px fade(@theme-primary, 12%);
+      }
+
+      &:active {
+        color: @theme-primary;
+        border-color: fade(@theme-primary, 30%);
+        background: fade(@theme-primary, 20%);
+        transform: scale(0.98);
+        box-shadow: inset 0 1px 3px fade(@theme-primary, 20%);
+      }
     }
 
-    &:active {
-      background: var(--btn-active-bg-color);
+    &.btn-active-info {
+      &:hover {
+        color: @theme-info;
+        border-color: fade(@theme-info, 20%);
+        background: fade(@theme-info, 10%);
+        box-shadow: 0 2px 6px fade(@theme-info, 12%);
+      }
+
+      &:active {
+        color: @theme-info;
+        border-color: fade(@theme-info, 30%);
+        background: fade(@theme-info, 20%);
+        transform: scale(0.98);
+        box-shadow: inset 0 1px 3px fade(@theme-info, 20%);
+      }
+    }
+
+    &.btn-active-success {
+      &:hover {
+        color: @theme-success;
+        border-color: fade(@theme-success, 20%);
+        background: fade(@theme-success, 10%);
+        box-shadow: 0 2px 6px fade(@theme-success, 12%);
+      }
+
+      &:active {
+        color: @theme-success;
+        border-color: fade(@theme-success, 30%);
+        background: fade(@theme-success, 20%);
+        transform: scale(0.98);
+        box-shadow: inset 0 1px 3px fade(@theme-success, 20%);
+      }
+    }
+
+    &.btn-active-danger {
+      &:hover {
+        color: @theme-danger;
+        border-color: fade(@theme-danger, 20%);
+        background: fade(@theme-danger, 10%);
+        box-shadow: 0 2px 6px fade(@theme-danger, 12%);
+      }
+
+      &:active {
+        color: @theme-danger;
+        border-color: fade(@theme-danger, 30%);
+        background: fade(@theme-danger, 20%);
+        transform: scale(0.98);
+        box-shadow: inset 0 1px 3px fade(@theme-danger, 20%);
+      }
+    }
+
+    &.btn-active-warning {
+      &:hover {
+        color: @theme-warning;
+        border-color: fade(@theme-warning, 20%);
+        background: fade(@theme-warning, 10%);
+        box-shadow: 0 2px 6px fade(@theme-warning, 12%);
+      }
+
+      &:active {
+        color: @theme-warning;
+        border-color: fade(@theme-warning, 30%);
+        background: fade(@theme-warning, 20%);
+        transform: scale(0.98);
+        box-shadow: inset 0 1px 3px fade(@theme-warning, 20%);
+      }
     }
   }
 
   &.btn-primary {
-    border-color: #086dc7;
-    background: #086dc7;
+    background: @theme-primary;
+    border-color: @theme-primary;
     color: #fff;
 
     &:hover {
-      background: #035dac;
-      border-color: #035dac;
+      background: lighten(@theme-primary, 6%);
+      border-color: lighten(@theme-primary, 6%);
+      box-shadow: 0 2px 8px fade(@theme-primary, 30%);
     }
 
     &:active {
-      background: #0a467a;
-      border-color: #0a467a;
+      background: darken(@theme-primary, 4%);
+      border-color: darken(@theme-primary, 4%);
+      transform: scale(0.98);
+      box-shadow: inset 0 1px 3px fade(#000, 20%);
     }
   }
 
   &.btn-success {
-    border-color: #03bc56;
-    background: #03bc56;
+    background: @theme-success;
+    border-color: @theme-success;
     color: #fff;
 
     &:hover {
-      background: #05a84e;
-      border-color: #05a84e;
+      background: lighten(@theme-success, 6%);
+      border-color: lighten(@theme-success, 6%);
+      box-shadow: 0 2px 8px fade(@theme-success, 30%);
     }
 
     &:active {
-      background: #068b42;
-      border-color: #068b42;
+      background: darken(@theme-success, 4%);
+      border-color: darken(@theme-success, 4%);
+      transform: scale(0.98);
+      box-shadow: inset 0 1px 3px fade(#000, 20%);
     }
   }
 
   &.btn-info {
-    border-color: #02b4cf;
-    background: #02b4cf;
+    background: @theme-info;
+    border-color: @theme-info;
     color: #fff;
 
     &:hover {
-      background: #069bb2;
-      border-color: #069bb2;
+      background: lighten(@theme-info, 6%);
+      border-color: lighten(@theme-info, 6%);
+      box-shadow: 0 2px 8px fade(@theme-info, 30%);
     }
 
     &:active {
-      background: #01889d;
-      border-color: #01889d;
+      background: darken(@theme-info, 4%);
+      border-color: darken(@theme-info, 4%);
+      transform: scale(0.98);
+      box-shadow: inset 0 1px 3px fade(#000, 20%);
     }
   }
 
   &.btn-danger {
-    border-color: #dc0c24;
-    background: #dc0c24;
+    background: @theme-danger;
+    border-color: @theme-danger;
     color: #fff;
 
     &:hover {
-      background: #be051a;
-      border-color: #be051a;
+      background: lighten(@theme-danger, 6%);
+      border-color: lighten(@theme-danger, 6%);
+      box-shadow: 0 2px 8px fade(@theme-danger, 30%);
     }
 
     &:active {
-      background: #960d1d;
-      border-color: #960d1d;
+      background: darken(@theme-danger, 4%);
+      border-color: darken(@theme-danger, 4%);
+      transform: scale(0.98);
+      box-shadow: inset 0 1px 3px fade(#000, 20%);
     }
   }
 
   &.btn-warning {
-    border-color: #da8907;
-    background: #da8907;
+    background: @theme-warning;
+    border-color: @theme-warning;
     color: #fff;
 
     &:hover {
-      background: #bb7402;
-      border-color: #bb7402;
+      background: lighten(@theme-warning, 6%);
+      border-color: lighten(@theme-warning, 6%);
+      box-shadow: 0 2px 8px fade(@theme-warning, 30%);
     }
 
     &:active {
-      background: #9f6507;
-      border-color: #9f6507;
+      background: darken(@theme-warning, 4%);
+      border-color: darken(@theme-warning, 4%);
+      transform: scale(0.98);
+      box-shadow: inset 0 1px 3px fade(#000, 20%);
+    }
+  }
+
+  &.btn-dark {
+    &.btn-default {
+      background: #222;
+      border-color: #3c3c3c;
+      color: #e4e4e4;
+
+      &:hover {
+        color: @theme-primary;
+        border-color: fade(@theme-primary, 40%);
+        background: fade(@theme-primary, 20%);
+        box-shadow: 0 2px 6px fade(@theme-primary, 25%);
+      }
+
+      &:active {
+        color: lighten(@theme-primary, 10%);
+        border-color: fade(@theme-primary, 50%);
+        background: fade(@theme-primary, 30%);
+        transform: scale(0.98);
+        box-shadow: inset 0 1px 4px fade(@theme-primary, 30%), inset 0 0 6px fade(#000, 40%);
+      }
     }
   }
 }
